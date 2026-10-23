@@ -443,6 +443,8 @@
       spring: finePointer ? 0.04 : 0.05,
       drag: finePointer ? 0.85 : 0.78,
       ring: finePointer,
+      // Phones only play with the reel on the entry screen; after that a finger just scrolls.
+      interactive: finePointer || showGate,
       stick: showGate,
       revealTarget: showGate ? revealTarget : null,
       onReveal: () => root.classList.add("is-gate-ready"),
@@ -455,8 +457,6 @@
     });
     if (showGate) {
       document.querySelector(".hero__hint").textContent = "Wipe the reel to find Enter";
-    } else if (!finePointer) {
-      document.querySelector(".hero__hint").textContent = "Swipe across the reel";
     }
 
     enterBtn.addEventListener("click", () => {
@@ -466,7 +466,7 @@
         sessionStorage.setItem("es-entered", "1");
       } catch {}
       heroField.release();
-      document.querySelector(".hero__hint").textContent = "Swipe across the reel";
+      heroField.set("interactive", false);
       window.scrollTo(0, 0);
     });
   }
@@ -526,11 +526,16 @@
 
   const reveals = document.querySelectorAll("[data-reveal]");
   if ("IntersectionObserver" in window && !reduceMotion) {
+    // Replays every time: blocks fade out when they leave the screen and
+    // rise back in from whichever edge they re-enter.
     const io = new IntersectionObserver((entries) => {
       entries.forEach((e) => {
+        const el = e.target;
         if (e.isIntersecting) {
-          e.target.classList.add("is-in");
-          io.unobserve(e.target);
+          el.classList.add("is-in");
+        } else {
+          el.dataset.from = e.boundingClientRect.top < 0 ? "above" : "below";
+          el.classList.remove("is-in");
         }
       });
     }, { rootMargin: "0px 0px -8% 0px" });
