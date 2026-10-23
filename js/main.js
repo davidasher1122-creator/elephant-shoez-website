@@ -231,7 +231,7 @@
         ctx.beginPath();
         ctx.arc(mx, my, down ? 26 : 18, 0, Math.PI * 2);
         ctx.stroke();
-        ctx.strokeStyle = "rgba(255,204,51,0.55)";
+        ctx.strokeStyle = "rgba(170,140,193,0.7)";
         ctx.beginPath();
         ctx.arc(mx, my, down ? 46 : 34, 0, Math.PI * 2);
         ctx.stroke();
