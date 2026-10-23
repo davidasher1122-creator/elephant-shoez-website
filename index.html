@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Elephant Shoez — AI Music Video Production</title>
+    <meta name="description" content="Elephant Shoez creates bespoke AI-driven music videos built around your song, story, and sound. Artist-first, custom visuals." />
+    <meta name="theme-color" content="#0e0e0c" />
+    <meta name="robots" content="index, follow, max-image-preview:large" />
+    <link rel="canonical" href="https://elephantshoez.site/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Elephant Shoez" />
+    <meta property="og:title" content="Elephant Shoez — AI Music Video Production" />
+    <meta property="og:description" content="Custom visuals built around your song, your story, and your sound." />
+    <meta property="og:url" content="https://elephantshoez.site/" />
+    <meta property="og:image" content="https://elephantshoez.site/assets/img/logo.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="assets/img/icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <!-- Background: stills from the work that dissolve under the mouse / a scrolling finger -->
+    <div class="bg-stage" aria-hidden="true">
+      <canvas id="bg-canvas"></canvas>
+      <div class="bg-stage__veil"></div>
+    </div>
+
+    <header class="site-header">
+      <nav class="nav wrap" aria-label="Primary">
+        <a class="brand" href="#home" aria-label="Elephant Shoez home">
+          <img src="assets/img/icon.png" alt="" width="34" height="44" />
+          <span>Elephant Shoez</span>
+        </a>
+        <ul class="nav__links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#work">Selected work</a></li>
+          <li><a href="#process">Process</a></li>
+        </ul>
+        <a class="btn btn--primary nav__cta" href="#contact">Start a project ↗</a>
+        <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-drawer">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </header>
+
+    <div class="nav-drawer" id="nav-drawer">
+      <a href="#about">About</a>
+      <a href="#work">Selected work</a>
+      <a href="#process">Process</a>
+      <a href="#contact">Start a project ↗</a>
+    </div>
+
+    <main>
+      <!-- HERO: the silent reel, drawn as pixels that scatter under the pointer -->
+      <section class="hero" id="home" aria-label="Intro">
+        <div class="hero__stage">
+          <div class="hero__screen">
+          <!--
+            Drop the silent compilation in as assets/video/hero-reel.mp4.
+            Until it exists, a stand-in reel cuts between the four work videos.
+          -->
+          <video
+            id="hero-video"
+            class="hero__video"
+            data-src="assets/video/hero-reel.mp4"
+            data-standin='["assets/video/little-white-lies.mp4","assets/video/sideways.mp4","assets/video/schemes.mp4","assets/video/only-dead-things-grow.mp4"]'
+            poster="assets/img/posters/little-white-lies.jpg"
+            muted
+            loop
+            playsinline
+            autoplay
+            preload="auto"
+            aria-hidden="true"
+          ></video>
+          <button type="button" class="hero__enter" id="hero-enter">Enter</button>
+          <canvas id="hero-canvas" class="hero__canvas" aria-label="Silent reel of Elephant Shoez music videos. Move your mouse over it to scatter the pixels."></canvas>
+          <p class="hero__hint">Run your mouse over the reel</p>
+          </div>
+          <div class="hero__overlay">
+            <p class="eyebrow">AI Music Video Production</p>
+            <h1>Your sound.<br />Your world.<br /><span>On screen.</span></h1>
+            <p class="hero__copy">Bespoke AI music videos built around your song, your story, and your sound. Original visuals, professional production, and an artist-first process.</p>
+            <div class="hero__actions">
+              <a class="btn btn--primary" href="#work">Watch selected work ↘</a>
+              <a class="btn btn--ghost" href="#contact">Tell us about your track</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="ticker" aria-hidden="true">
+        <div class="ticker__track">
+          <span>Music videos</span><span>Artist-first</span><span>Custom by nature</span><span>Made for the music</span><span>No fixed packages</span>
+          <span>Music videos</span><span>Artist-first</span><span>Custom by nature</span><span>Made for the music</span><span>No fixed packages</span>
+        </div>
+      </div>
+
+      <!-- ABOUT -->
+      <section class="section" id="about">
+        <div class="wrap">
+          <p class="eyebrow" data-reveal>What we do</p>
+          <h2 data-reveal>Custom by nature.</h2>
+          <div class="intro-grid">
+            <p class="statement" data-reveal>We create original, high-end music video visuals that feel <em>made for the music</em>, never pulled from a formula.</p>
+            <div data-reveal data-reveal-delay="1">
+              <p class="body-copy">Elephant Shoez is a professional video production company specializing in AI-driven music videos for independent artists, labels, and sync teams. We use advanced creative tools in service of an individual idea, shaping every project around the track, the concept, and the artist's references.</p>
+              <p class="body-copy">No two videos should look the same. We avoid recycled aesthetics and the generic “AI look” to build a visual world that belongs to your song.</p>
+            </div>
+          </div>
+          <div class="principles">
+            <div class="principle" data-reveal>
+              <b>Artist-first</b>
+              <p>Your track and your vision lead every creative decision.</p>
+            </div>
+            <div class="principle" data-reveal data-reveal-delay="1">
+              <b>Made to fit</b>
+              <p>Concept, mood, pacing, and visuals are built for each project.</p>
+            </div>
+            <div class="principle" data-reveal data-reveal-delay="2">
+              <b>Professional production</b>
+              <p>Distinctive visuals without the overhead of a big shoot.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORK -->
+      <section class="section section--work" id="work">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow" data-reveal>Selected work</p>
+              <h2 data-reveal>Elephant Shoez Productions.</h2>
+            </div>
+            <p class="section-head__note" data-reveal>Every video starts from the song. Press play for sound.</p>
+          </div>
+          <div class="video-grid">
+            <article class="video-card" data-reveal>
+              <video src="assets/video/little-white-lies.mp4" poster="assets/img/posters/little-white-lies.jpg" controls playsinline preload="none"></video>
+              <div class="video-meta">
+                <div><h3>Little White Lies</h3><p>Elephant Shoez Production</p></div>
+                <span class="video-number">01 / 04</span>
+              </div>
+            </article>
+            <article class="video-card" data-reveal data-reveal-delay="1">
+              <video src="assets/video/sideways.mp4" poster="assets/img/posters/sideways.jpg" controls playsinline preload="none"></video>
+              <div class="video-meta">
+                <div><h3>Sideways</h3><p>Elephant Shoez Production</p></div>
+                <span class="video-number">02 / 04</span>
+              </div>
+            </article>
+            <article class="video-card" data-reveal>
+              <video src="assets/video/schemes.mp4" poster="assets/img/posters/schemes.jpg" controls playsinline preload="none"></video>
+              <div class="video-meta">
+                <div><h3>Schemes</h3><p>Elephant Shoez Production</p></div>
+                <span class="video-number">03 / 04</span>
+              </div>
+            </article>
+            <article class="video-card" data-reveal data-reveal-delay="1">
+              <video src="assets/video/only-dead-things-grow.mp4" poster="assets/img/posters/only-dead-things-grow.jpg" controls playsinline preload="none"></video>
+              <div class="video-meta">
+                <div><h3>Only Dead Things Grow</h3><p>Elephant Shoez Production</p></div>
+                <span class="video-number">04 / 04</span>
+              </div>
+            </article>
+          </div>
+          <p class="work-more" data-reveal>More work available on request.</p>
+        </div>
+      </section>
+
+      <!-- PROCESS -->
+      <section class="section" id="process">
+        <div class="wrap">
+          <p class="eyebrow" data-reveal>How we work</p>
+          <h2 data-reveal>Clear conversation.<br />Custom production.</h2>
+          <ol class="workflow">
+            <li class="step" data-reveal>
+              <h3>Share the track</h3>
+              <p>Send the song, your idea, and how you want it to feel.</p>
+            </li>
+            <li class="step" data-reveal data-reveal-delay="1">
+              <h3>Talk references</h3>
+              <p>We discuss direction, length, complexity, and budget.</p>
+            </li>
+            <li class="step" data-reveal data-reveal-delay="2">
+              <h3>Get a clear quote</h3>
+              <p>Scope and price are agreed before production starts.</p>
+            </li>
+            <li class="step" data-reveal data-reveal-delay="3">
+              <h3>Build the video</h3>
+              <p>We make it to the direction we agreed together.</p>
+            </li>
+          </ol>
+          <div class="pricing-band" data-reveal>
+            <div>
+              <h3>No fixed packages. No surprise add-ons.</h3>
+              <p>Every video is priced on its scope, length, complexity, and revisions, so you only pay for what your project needs.</p>
+            </div>
+            <a class="btn btn--primary" href="#contact">Discuss your project ↗</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACT -->
+      <section class="section section--contact" id="contact">
+        <div class="wrap contact-grid">
+          <div>
+            <p class="eyebrow" data-reveal>Start a project</p>
+            <h2 data-reveal>Tell us about the track.</h2>
+            <p class="contact-copy" data-reveal>Send the song, your vision, and any references. We'll come back with a scope and a clear price.</p>
+            <ul class="contact-links" data-reveal>
+              <li><a href="mailto:elephantshoezproductions@gmail.com"><span>Email</span>elephantshoezproductions@gmail.com</a></li>
+              <li><a href="https://www.instagram.com/elephant_shoez_productions" target="_blank" rel="noopener"><span>Instagram</span>@elephant_shoez_productions</a></li>
+              <li><a href="https://www.tiktok.com/@elephantshoezproductions" target="_blank" rel="noopener"><span>TikTok</span>@elephantshoezproductions</a></li>
+              <li><a href="https://www.facebook.com/people/Elephant-Shoez-Productions/61595091941577/" target="_blank" rel="noopener"><span>Facebook</span>Elephant Shoez Productions</a></li>
+            </ul>
+          </div>
+          <form class="inquiry" id="inquiry-form" data-email="elephantshoezproductions@gmail.com" novalidate data-reveal data-reveal-delay="1">
+            <div class="form-row form-row--2">
+              <label>Name<input name="name" type="text" autocomplete="name" required /></label>
+              <label>Email<input name="email" type="email" autocomplete="email" required /></label>
+            </div>
+            <label>Artist / project<input name="artist" type="text" /></label>
+            <label>Link to the track<input name="track" type="url" placeholder="SoundCloud, Dropbox, Drive…" /></label>
+            <label>Your idea<textarea name="message" rows="5" required placeholder="The feeling, the story, any references…"></textarea></label>
+            <button class="btn btn--dark" type="submit">Send to Elephant Shoez ↗</button>
+            <p class="form-status" role="status"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <span>© <span data-year></span> Elephant Shoez Productions</span>
+        <span>AI Music Video Production · Original visuals for original sound.</span>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>
