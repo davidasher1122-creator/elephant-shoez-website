@@ -21,24 +21,29 @@ Open http://localhost:5174
 - `?look=pixels` shows the hero as a mosaic at rest instead of the clean video.
 - `?gate=off` skips the phone "wipe to find Enter" screen while testing.
 
-## Swap in the silent reel
+## Hero reel
 
-Export the compilation as **H.264 MP4, no audio track, 1920×1080 or 1280×720, under ~25 MB**
-and save it as:
+The pixel effect needs a video file on the site. YouTube cannot feed it.
+`assets/video/hero-reel.mp4` is a silent 1080p loop, about 14 MB, under
+Cloudflare's 25 MB file cap. It is seven seconds from each of the four
+local films, with the sound removed.
 
-```
-assets/video/hero-reel.mp4
-```
+To replace it, export **H.264 MP4, no audio, 1920×1080, under 25 MB**
+to that same path.
 
-It loops automatically. Until that file exists, the hero cuts between the four work videos
-as a stand-in. Update the `poster` on `#hero-video` in `index.html` with a still from the reel.
+## Selected work
+
+The four cards link out to StoryLlne Records on YouTube. Posters stay
+in `assets/img/posters/`. The full films are not hosted here.
 
 ## Where things are
 
 | What | Where |
 |------|-------|
 | Hero reel | `assets/video/hero-reel.mp4` |
-| Work videos | `assets/video/*.mp4` (posters in `assets/img/posters/`) |
+| Work posters | `assets/img/posters/` |
+| YouTube links | `index.html`, the `#work` cards |
+| StoryLlne channel | https://www.youtube.com/@StoryLlneRecords |
 | Background stills (change as you scroll) | `assets/img/bg/bg-1.jpg` … `bg-5.jpg` |
 | Effect tuning (cell size, radius, force) | `js/main.js`, the `createPixelField(heroCanvas, …)` and `createPixelField(bgCanvas, …)` calls |
 | Contact email | `index.html`, `#inquiry-form` `data-email` and the contact links |

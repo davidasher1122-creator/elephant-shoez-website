@@ -256,9 +256,24 @@ html.is-touch.is-entered .hero__canvas { cursor: default; }
 
 .section--work { background: rgba(23, 23, 20, 0.82); }
 .video-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.25rem; }
-.video-card { border: 1px solid var(--line); border-radius: 0.9rem; overflow: hidden; background: #0b0b0a; transition: border-color 0.25s, transform 0.25s; }
+.video-card { display: block; border: 1px solid var(--line); border-radius: 0.9rem; overflow: hidden; background: #0b0b0a; color: inherit; text-decoration: none; transition: border-color 0.25s, transform 0.25s; }
 .video-card:hover { border-color: rgba(170, 140, 193, 0.6); transform: translateY(-3px); }
-.video-card video { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; object-fit: cover; }
+.video-card:focus-visible { outline: 2px solid var(--purple); outline-offset: 3px; }
+.video-card__media { position: relative; display: block; }
+.video-card__media img { display: block; width: 100%; aspect-ratio: 16 / 9; background: #000; object-fit: cover; }
+.video-card__play {
+  position: absolute;
+  left: 0.9rem;
+  bottom: 0.9rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--ink);
+  font: 800 0.72rem/1 var(--font-ui);
+}
+.video-card:hover .video-card__play,
+.video-card:focus-visible .video-card__play { background: var(--accent-hi); }
+.work-more a { color: var(--accent); }
 .video-meta { display: flex; justify-content: space-between; align-items: center; gap: 1rem; padding: 1rem 1.15rem 1.1rem; }
 .video-meta h3 { margin: 0; }
 .video-meta p { margin: 0.15rem 0 0; color: var(--muted); font-size: 0.82rem; }

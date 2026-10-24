@@ -385,31 +385,8 @@
   const enterBtn = document.querySelector("#hero-enter");
 
   function startReel(video) {
-    const standIn = JSON.parse(video.dataset.standin || "[]");
-    let clip = -1;
-    let clipStart = 0;
-
-    // Until hero-reel.mp4 exists, cut between the work videos: ~7s from each.
-    function nextClip() {
-      clip = (clip + 1) % standIn.length;
-      video.loop = false;
-      video.src = standIn[clip];
-      video.addEventListener("loadedmetadata", () => {
-        clipStart = video.duration * 0.22;
-        video.currentTime = clipStart;
-        video.play().catch(() => {});
-      }, { once: true });
-    }
-    function onTime() {
-      if (clip >= 0 && video.currentTime - clipStart > 7) nextClip();
-    }
-
-    video.addEventListener("error", () => {
-      if (clip >= 0 || !standIn.length) return;
-      video.addEventListener("timeupdate", onTime);
-      video.addEventListener("ended", nextClip);
-      nextClip();
-    }, { once: true });
+    video.loop = true;
+    video.muted = true;
     video.src = video.dataset.src;
     video.play().catch(() => {});
   }

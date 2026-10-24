@@ -58,15 +58,11 @@
       <section class="hero" id="home" aria-label="Intro">
         <div class="hero__stage">
           <div class="hero__screen">
-          <!--
-            Drop the silent compilation in as assets/video/hero-reel.mp4.
-            Until it exists, a stand-in reel cuts between the four work videos.
-          -->
+          <!-- Silent reel only. Full films play on YouTube. -->
           <video
             id="hero-video"
             class="hero__video"
             data-src="assets/video/hero-reel.mp4"
-            data-standin='["assets/video/little-white-lies.mp4","assets/video/skin-in-the-game.mp4","assets/video/schemes.mp4","assets/video/only-dead-things-grow.mp4"]'
             poster="assets/img/posters/little-white-lies.jpg"
             muted
             loop
@@ -135,39 +131,51 @@
               <p class="eyebrow" data-reveal>Selected work</p>
               <h2 data-reveal>Elephant Shoez Productions.</h2>
             </div>
-            <p class="section-head__note" data-reveal>Every video starts from the song. Press play for sound.</p>
+            <p class="section-head__note" data-reveal>Every video starts from the song. The full films play on YouTube.</p>
           </div>
           <div class="video-grid">
-            <article class="video-card" data-reveal>
-              <video src="assets/video/little-white-lies.mp4" poster="assets/img/posters/little-white-lies.jpg" controls playsinline preload="none"></video>
+            <a class="video-card" data-reveal href="https://www.youtube.com/watch?v=3k3-QwQ5-i8" target="_blank" rel="noopener noreferrer">
+              <span class="video-card__media">
+                <img src="assets/img/posters/little-white-lies.jpg" alt="" />
+                <span class="video-card__play">Play on YouTube</span>
+              </span>
               <div class="video-meta">
-                <div><h3>Little White Lies</h3><p>Elephant Shoez Production</p></div>
+                <div><h3>Little White Lies</h3><p>Asher Aday · Elephant Shoez Production</p></div>
                 <span class="video-number">01 / 04</span>
               </div>
-            </article>
-            <article class="video-card" data-reveal data-reveal-delay="1">
-              <video src="assets/video/skin-in-the-game.mp4" poster="assets/img/posters/skin-in-the-game.jpg" controls playsinline preload="none"></video>
+            </a>
+            <a class="video-card" data-reveal data-reveal-delay="1" href="https://www.youtube.com/watch?v=mmh7ry02o7Q" target="_blank" rel="noopener noreferrer">
+              <span class="video-card__media">
+                <img src="assets/img/posters/only-dead-things-grow.jpg" alt="" />
+                <span class="video-card__play">Play on YouTube</span>
+              </span>
               <div class="video-meta">
-                <div><h3>Skin in the Game</h3><p>Asher Aday · Elephant Shoez Production</p></div>
+                <div><h3>Only Dead Things Grow</h3><p>warHall · Elephant Shoez Production</p></div>
                 <span class="video-number">02 / 04</span>
               </div>
-            </article>
-            <article class="video-card" data-reveal>
-              <video src="assets/video/schemes.mp4" poster="assets/img/posters/schemes.jpg" controls playsinline preload="none"></video>
+            </a>
+            <a class="video-card" data-reveal href="https://www.youtube.com/watch?v=IuhmvfHdadk" target="_blank" rel="noopener noreferrer">
+              <span class="video-card__media">
+                <img src="assets/img/posters/schemes.jpg" alt="" />
+                <span class="video-card__play">Play on YouTube</span>
+              </span>
               <div class="video-meta">
-                <div><h3>Schemes</h3><p>Elephant Shoez Production</p></div>
+                <div><h3>Schemes</h3><p>Asher Aday · Elephant Shoez Production</p></div>
                 <span class="video-number">03 / 04</span>
               </div>
-            </article>
-            <article class="video-card" data-reveal data-reveal-delay="1">
-              <video src="assets/video/only-dead-things-grow.mp4" poster="assets/img/posters/only-dead-things-grow.jpg" controls playsinline preload="none"></video>
+            </a>
+            <a class="video-card" data-reveal data-reveal-delay="1" href="https://www.youtube.com/watch?v=BbIi5VRd5Ag" target="_blank" rel="noopener noreferrer">
+              <span class="video-card__media">
+                <img src="assets/img/posters/dear-mary.jpg" alt="" />
+                <span class="video-card__play">Play on YouTube</span>
+              </span>
               <div class="video-meta">
-                <div><h3>Only Dead Things Grow</h3><p>Elephant Shoez Production</p></div>
+                <div><h3>Dear Mary</h3><p>Heather · Elephant Shoez Production</p></div>
                 <span class="video-number">04 / 04</span>
               </div>
-            </article>
+            </a>
           </div>
-          <p class="work-more" data-reveal>More work available on request.</p>
+          <p class="work-more" data-reveal>All four are on <a href="https://www.youtube.com/@StoryLlneRecords" target="_blank" rel="noopener noreferrer">StoryLlne Records</a>. More work available on request.</p>
         </div>
       </section>
 
